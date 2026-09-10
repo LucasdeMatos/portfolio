@@ -3,1466 +3,1430 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Portfólio de Lucas de Matos: estudos, experiências e projetos pessoais em evolução."
-    />
-    <meta name="theme-color" content="#11100e" />
-    <title>Lucas de Matos — Portfólio</title>
+    <meta name="description" content="Portfólio de Lucas de Matos: três projetos, três formas de transformar intenção em experiência." />
+    <meta name="theme-color" content="#f1ed39" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23f1ed39'/%3E%3Cpath d='M18 14h10v26h20v10H18z' fill='%2311110f'/%3E%3C/svg%3E" />
+    <title>Lucas de Matos — Ideias precisam aterrissar</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Jura:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=Azeret+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+    <script>
+      document.documentElement.classList.add("js");
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.classList.add("motion-ok");
+      }
+    </script>
     <style>
       :root {
-        --void: #11100e;
-        --void-raised: #191714;
-        --stone: #302b24;
-        --stone-soft: #635a4c;
-        --bone: #f2eadb;
-        --bone-dim: #c9c0b1;
-        --copper: #ca8253;
-        --copper-lit: #ebaf7e;
-        --moss: #a7b58c;
-        --line: rgb(242 234 219 / 16%);
-        --line-strong: rgb(242 234 219 / 29%);
-        --page-width: min(1160px, calc(100% - clamp(2.5rem, 10vw, 10rem)));
-        --display: "Jura", "Trebuchet MS", sans-serif;
-        --body: "Manrope", "Segoe UI", sans-serif;
-        --page-progress: 0;
-        --page-progress-pct: 0%;
-        --hero-copy-shift: 0px;
-        --hero-copy-opacity: 1;
-        --hero-visual-x: 0px;
-        --hero-visual-y: 0px;
-        --hero-visual-rotate: 0deg;
-        --hero-visual-scale: 1;
-        --projects-progress: 0;
-        --process-ring-x: 0px;
-        --process-ring-y: 0px;
-        --process-ring-scale: 1;
-        --process-orbit-x: 0px;
-        --process-orbit-y: 0px;
-        --process-orbit-scale: 1;
-        color-scheme: dark;
+        --ink: #11110f;
+        --paper: #f4f1e7;
+        --paper-deep: #e7e2d2;
+        --safety: #f1ed39;
+        --blue: #2457ff;
+        --blue-soft: #b9c9ff;
+        --coral: #ff5a36;
+        --white: #fffef8;
+        --line: 2px;
+        --header-h: 4.5rem;
+        --page: min(1220px, calc(100% - clamp(2rem, 6vw, 6rem)));
+        --progress: 0;
+        --display: "Archivo Black", "Arial Black", sans-serif;
+        --body: "Archivo", "Arial", sans-serif;
+        --mono: "Azeret Mono", "Consolas", monospace;
       }
 
-      * {
-        box-sizing: border-box;
-      }
+      *, *::before, *::after { box-sizing: border-box; }
 
       html {
+        min-width: 320px;
         scroll-behavior: smooth;
-        background: var(--void);
+        scrollbar-color: var(--ink) var(--safety);
+        background: var(--ink);
       }
 
       body {
-        min-width: 320px;
         margin: 0;
         overflow-x: hidden;
-        color: var(--bone);
-        background:
-          radial-gradient(circle at 78% 8%, rgb(202 130 83 / 10%), transparent 24rem),
-          radial-gradient(circle at 3% 52%, rgb(167 181 140 / 7%), transparent 28rem),
-          var(--void);
+        color: var(--ink);
+        background: var(--paper);
         font-family: var(--body);
-        font-size: clamp(1rem, 0.94rem + 0.22vw, 1.125rem);
-        line-height: 1.7;
+        font-size: clamp(1rem, 0.96rem + 0.18vw, 1.125rem);
+        line-height: 1.6;
       }
 
-      body::before {
-        position: fixed;
-        z-index: -1;
-        inset: 0;
-        pointer-events: none;
-        opacity: 0.42;
-        background-image:
-          linear-gradient(90deg, transparent 0 49.85%, rgb(242 234 219 / 2.5%) 50%, transparent 50.15%),
-          linear-gradient(0deg, transparent 0 49.85%, rgb(242 234 219 / 2.5%) 50%, transparent 50.15%);
-        background-size: 84px 84px;
-        content: "";
-        mask-image: radial-gradient(circle at center, #000, transparent 86%);
-      }
-
-      ::selection {
-        color: var(--void);
-        background: var(--copper-lit);
-      }
+      ::selection { color: var(--white); background: var(--blue); }
 
       a {
         color: inherit;
-        text-underline-offset: 0.23em;
-        text-decoration-thickness: 1px;
-      }
-
-      a:hover {
-        color: var(--copper-lit);
+        text-decoration-thickness: 2px;
+        text-underline-offset: 0.22em;
       }
 
       a:focus-visible {
-        outline: 3px solid var(--copper-lit);
-        outline-offset: 5px;
-        border-radius: 2px;
+        outline: 4px solid var(--blue);
+        outline-offset: 4px;
       }
 
-      button,
-      a {
-        -webkit-tap-highlight-color: transparent;
+      h1, h2, h3, p { margin-top: 0; }
+
+      h1, h2, h3 {
+        font-family: var(--display);
+        font-weight: 400;
+        line-height: 0.94;
+        letter-spacing: -0.04em;
+        text-wrap: balance;
       }
 
       .skip-link {
         position: fixed;
-        z-index: 20;
-        top: 1rem;
-        left: 1rem;
-        padding: 0.7rem 1rem;
-        color: var(--void);
-        background: var(--bone);
-        transform: translateY(-160%);
-        transition: transform 180ms ease;
+        z-index: 200;
+        top: 0.75rem;
+        left: 0.75rem;
+        padding: 0.75rem 1rem;
+        color: var(--white);
+        background: var(--blue);
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        font-weight: 700;
+        transform: translateY(-180%);
+        transition: transform 180ms ease-out;
       }
 
-      .skip-link:focus {
-        transform: translateY(0);
-      }
+      .skip-link:focus { transform: translateY(0); }
 
       .site-header {
+        position: absolute;
+        z-index: 20;
+        top: 0;
+        left: 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: var(--page-width);
-        min-height: 5.8rem;
-        margin: 0 auto;
-        border-bottom: 1px solid var(--line);
+        width: 100%;
+        min-height: var(--header-h);
+        padding-inline: max(1rem, calc((100% - 1220px) / 2));
+        border-bottom: var(--line) solid var(--ink);
+        color: var(--ink);
+        background: var(--safety);
       }
 
-      .monogram {
+      .brand {
         display: inline-flex;
         align-items: center;
         gap: 0.75rem;
-        color: var(--bone);
-        font-family: var(--display);
-        font-size: 0.85rem;
+        font-family: var(--mono);
+        font-size: 0.72rem;
         font-weight: 700;
-        letter-spacing: 0.13em;
+        letter-spacing: 0.06em;
         text-decoration: none;
         text-transform: uppercase;
       }
 
-      .monogram::before {
-        width: 1.6rem;
-        height: 1.6rem;
-        border: 1px solid var(--copper);
-        border-radius: 50%;
-        background:
-          linear-gradient(45deg, transparent 46%, var(--copper) 47% 53%, transparent 54%),
-          linear-gradient(-45deg, transparent 46%, var(--copper) 47% 53%, transparent 54%);
-        content: "";
+      .brand-mark {
+        display: grid;
+        grid-template-columns: repeat(2, 0.42rem);
+        gap: 0.18rem;
+        width: 1.05rem;
       }
 
-      .site-nav {
+      .brand-mark i { display: block; height: 0.42rem; background: var(--ink); }
+
+      .header-readout {
         display: flex;
-        gap: clamp(1.1rem, 3vw, 2.4rem);
-      }
-
-      .site-nav a {
-        color: var(--bone-dim);
-        font-family: var(--display);
-        font-size: 0.71rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-decoration: none;
+        align-items: center;
+        gap: 1rem;
+        font-family: var(--mono);
+        font-size: 0.64rem;
+        font-variant-numeric: tabular-nums;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
-        transition: color 160ms ease;
       }
 
-      .site-nav a:hover,
-      .site-nav a.is-current {
-        color: var(--copper-lit);
-      }
-
-      .story-rail {
-        position: fixed;
-        z-index: 6;
-        top: 50%;
-        right: clamp(1rem, 2.4vw, 2.75rem);
-        width: 1px;
-        height: clamp(7.5rem, 22vh, 12rem);
-        pointer-events: none;
-        background: var(--line);
-        opacity: 0.78;
-        transform: translateY(-50%);
-      }
-
-      .story-rail::before {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(var(--copper-lit), var(--copper), var(--moss));
-        content: "";
-        transform: scaleY(var(--page-progress));
-        transform-origin: top;
-        will-change: transform;
-      }
-
-      .story-rail span {
-        position: absolute;
-        top: var(--page-progress-pct);
-        left: 50%;
-        width: 0.52rem;
-        height: 0.52rem;
-        border: 1px solid var(--bone);
+      .header-led {
+        width: 0.58rem;
+        height: 0.58rem;
+        border: 1px solid var(--ink);
         border-radius: 50%;
-        background: var(--copper);
-        box-shadow: 0 0 0.9rem rgb(202 130 83 / 65%);
-        transform: translate(-50%, -50%);
-        will-change: top;
-      }
-
-      main {
-        width: var(--page-width);
-        margin: 0 auto;
+        background: var(--coral);
+        box-shadow: 0 3px 9px rgb(17 17 15 / 22%);
       }
 
       .hero {
         position: relative;
-        display: grid;
-        grid-template-columns: minmax(0, 1.15fr) minmax(19rem, 0.85fr);
-        align-items: center;
-        min-height: min(720px, calc(100svh - 5.8rem));
-        padding-block: clamp(5rem, 11vw, 9rem);
+        min-height: 100svh;
+        padding: calc(var(--header-h) + clamp(2rem, 5vh, 4.5rem)) 0 clamp(1.5rem, 4vh, 3rem);
+        border-bottom: var(--line) solid var(--ink);
+        background: var(--safety);
         isolation: isolate;
       }
 
-      .hero-copy {
-        position: relative;
-        z-index: 3;
-        max-width: 42rem;
-      }
-
-      .js .hero-copy {
-        opacity: var(--hero-copy-opacity);
-        transform: translate3d(0, var(--hero-copy-shift), 0);
-        will-change: opacity, transform;
-      }
-
-      h1,
-      h2,
-      h3,
-      p {
-        margin-top: 0;
-      }
-
-      h1,
-      h2,
-      h3 {
-        color: var(--bone);
-        font-family: var(--display);
-        line-height: 1.08;
-      }
-
-      h1 {
-        max-width: none;
-        margin-bottom: 1.5rem;
-        font-size: clamp(2.7rem, 5.2vw, 5.1rem);
-        font-weight: 700;
-        letter-spacing: -0.055em;
-        line-height: 0.99;
-      }
-
-      h1 span {
-        display: block;
-      }
-
-      .hero-copy > p {
-        max-width: 39rem;
-        margin-bottom: 2.2rem;
-        color: var(--bone-dim);
-      }
-
-      .hero-copy strong {
-        color: var(--bone);
-        font-weight: 700;
-      }
-
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 1.1rem 1.6rem;
-      }
-
-      .primary-link {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 3.4rem;
-        padding: 0.8rem 1.25rem;
-        border: 1px solid var(--copper);
-        color: var(--void);
-        background: var(--copper);
-        box-shadow: 0 1rem 2.3rem rgb(0 0 0 / 30%);
-        font-family: var(--display);
-        font-size: 0.76rem;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        text-decoration: none;
-        text-transform: uppercase;
-        transition: background-color 180ms ease, color 180ms ease, transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      .primary-link:hover {
-        color: var(--void);
-        background: var(--copper-lit);
-        transform: translateY(-3px);
-      }
-
-      .quiet-link {
-        color: var(--bone-dim);
-        font-family: var(--display);
-        font-size: 0.76rem;
-        font-weight: 700;
-        letter-spacing: 0.09em;
-        text-decoration-color: var(--copper);
-        text-transform: uppercase;
-      }
-
-      .hero-visual {
-        position: relative;
-        z-index: 1;
-        min-height: 31rem;
+      .hero::before {
+        position: absolute;
+        z-index: -1;
+        inset: var(--header-h) 0 0;
         pointer-events: none;
-      }
-
-      .js .hero-visual {
-        transform: translate3d(var(--hero-visual-x), var(--hero-visual-y), 0)
-          rotate(var(--hero-visual-rotate)) scale(var(--hero-visual-scale));
-        transform-origin: center 46%;
-        will-change: transform;
-      }
-
-      .hero-visual::before {
-        position: absolute;
-        inset: 14% 10% 7%;
-        border: 1px solid rgb(202 130 83 / 27%);
-        border-radius: 50%;
-        box-shadow: 0 0 80px rgb(202 130 83 / 9%);
+        background-image:
+          linear-gradient(90deg, transparent calc(50% - 1px), rgb(17 17 15 / 10%) 50%, transparent calc(50% + 1px)),
+          linear-gradient(0deg, transparent calc(50% - 1px), rgb(17 17 15 / 7%) 50%, transparent calc(50% + 1px));
+        background-size: 8rem 8rem;
         content: "";
-        transform: rotate(-14deg);
+        mask-image: linear-gradient(to bottom, #000, transparent 72%);
       }
 
-      .static-relic,
-      #scene-root,
-      .relic-scene {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.98fr) minmax(23rem, 0.72fr);
+        gap: clamp(2rem, 6vw, 6rem);
+        align-items: center;
+        width: var(--page);
+        margin: 0 auto;
       }
 
-      .static-relic {
-        color: var(--copper);
-        opacity: 0.8;
-        transition: opacity 800ms ease;
+      .hero-copy { position: relative; z-index: 2; padding-top: clamp(1rem, 3vh, 3rem); }
+
+      .hero h1 {
+        max-width: 8ch;
+        margin-bottom: clamp(1.5rem, 3vh, 2.4rem);
+        font-size: clamp(4rem, 8vw, 6rem);
       }
 
-      .webgl-ready .static-relic {
-        opacity: 0.18;
+      .hero h1 span { display: block; }
+
+      .hero h1 span:last-child {
+        width: fit-content;
+        padding: 0.06em 0.11em 0.1em;
+        color: var(--safety);
+        background: var(--ink);
+        transform: rotate(-1deg);
       }
 
-      .static-relic svg {
-        width: 100%;
-        height: 100%;
+      .hero-lede {
+        max-width: 52ch;
+        margin-bottom: clamp(1.7rem, 4vh, 3rem);
+        font-size: clamp(1.1rem, 1rem + 0.45vw, 1.42rem);
+        line-height: 1.45;
       }
 
-      .relic-scene {
-        opacity: 0.95;
+      .hero-lede strong { font-weight: 700; }
+
+      .scroll-cue {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        width: fit-content;
+        font-family: var(--mono);
+        font-size: 0.66rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
       }
 
-      .relic-scene canvas {
-        display: block;
-        width: 100%;
-        height: 100%;
+      .scroll-cue-line {
+        position: relative;
+        width: 4.5rem;
+        height: 0.65rem;
+        border-bottom: 2px solid var(--ink);
       }
 
-      .hero-note {
+      .scroll-cue-line::after {
         position: absolute;
         right: 0;
-        bottom: 0.3rem;
+        bottom: -2px;
+        width: 0.55rem;
+        height: 0.55rem;
+        border-right: 2px solid var(--ink);
+        border-bottom: 2px solid var(--ink);
+        content: "";
+        transform: rotate(45deg);
+        transform-origin: right bottom;
+      }
+
+      .drop-rig {
+        position: relative;
+        min-height: min(58vh, 35rem);
+        overflow: hidden;
+        border: var(--line) solid var(--ink);
+        background: var(--paper);
+        box-shadow: 0.9rem 1.15rem 2.4rem rgb(17 17 15 / 17%);
+      }
+
+      .rig-top {
         display: flex;
         align-items: center;
-        gap: 0.75rem;
-        color: var(--stone-soft);
-        font-family: var(--display);
-        font-size: 0.65rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
+        justify-content: space-between;
+        height: 3rem;
+        padding-inline: 0.85rem;
+        border-bottom: var(--line) solid var(--ink);
+        color: var(--white);
+        background: var(--ink);
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        font-variant-numeric: tabular-nums;
+        letter-spacing: 0.06em;
         text-transform: uppercase;
       }
 
-      .hero-note::before {
-        width: 2.7rem;
-        height: 1px;
+      .rig-lanes {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        height: calc(100% - 3rem);
+        min-height: calc(min(58vh, 35rem) - 3rem);
+      }
+
+      .rig-lane {
+        position: relative;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        border-right: 1px solid var(--ink);
+      }
+
+      .rig-lane:last-child { border-right: 0; }
+
+      .rig-lane::before {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 1px;
+        height: 31%;
+        background: var(--ink);
+        content: "";
+        transform-origin: top;
+        transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .rig-lane::after {
+        position: absolute;
+        right: 0.45rem;
+        bottom: 0.4rem;
+        left: 0.45rem;
+        height: 0.8rem;
+        border-top: 2px solid var(--ink);
+        border-right: 1px solid var(--ink);
+        border-left: 1px solid var(--ink);
+        content: "";
+      }
+
+      .rig-lane.is-preview::before, .rig-lane:has(.prototype.is-releasing)::before { transform: scaleY(0.84); }
+
+      .lane-label {
+        position: absolute;
+        top: 0.55rem;
+        left: 0.55rem;
+        font-family: var(--mono);
+        font-size: 0.52rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        writing-mode: vertical-rl;
+      }
+
+      .prototype {
+        position: relative;
+        z-index: 2;
+        transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1), filter 260ms ease, box-shadow 260ms ease;
+      }
+
+      .rig-lane.is-preview .prototype { filter: saturate(1.18); transform: translateY(-0.75rem) rotate(0deg) scale(1.05); }
+      .prototype.is-releasing { animation: test-pulse 420ms cubic-bezier(0.16, 1, 0.3, 1); }
+
+      .prototype-sheet {
+        display: grid;
+        width: clamp(4.4rem, 8vw, 6.4rem);
+        aspect-ratio: 0.78;
+        padding: 0.48rem;
+        border: 2px solid var(--ink);
+        color: var(--white);
+        background:
+          linear-gradient(90deg, transparent 32%, rgb(255 255 255 / 44%) 33% 34%, transparent 35% 65%, rgb(255 255 255 / 44%) 66% 67%, transparent 68%),
+          linear-gradient(0deg, transparent 32%, rgb(255 255 255 / 44%) 33% 34%, transparent 35% 65%, rgb(255 255 255 / 44%) 66% 67%, transparent 68%),
+          var(--blue);
+        box-shadow: 0.45rem 0.65rem 1.3rem rgb(36 87 255 / 25%);
+        transform: rotate(-4deg);
+      }
+
+      .prototype-sheet::before { align-self: start; width: 1.55rem; height: 0.35rem; background: var(--white); content: ""; }
+      .prototype-sheet strong { align-self: end; font-family: var(--mono); font-size: clamp(0.58rem, 1vw, 0.78rem); letter-spacing: 0.05em; }
+
+      .prototype-key { width: clamp(4.3rem, 7vw, 5.7rem); color: var(--coral); transform: rotate(5deg); }
+      .prototype-key svg { display: block; width: 100%; height: auto; overflow: visible; filter: drop-shadow(0.35rem 0.55rem 0.55rem rgb(17 17 15 / 18%)); }
+
+      .prototype-film {
+        display: grid;
+        gap: 0.28rem;
+        width: clamp(3.7rem, 6vw, 5rem);
+        padding: 0.48rem 0.62rem;
+        border: 2px solid var(--ink);
+        background: var(--coral);
+        box-shadow: 0.45rem 0.65rem 1.2rem rgb(255 90 54 / 22%);
+        transform: rotate(3deg);
+      }
+
+      .film-frame {
+        display: grid;
+        place-items: center;
+        aspect-ratio: 1;
+        border: 1px solid var(--ink);
+        background: var(--paper);
+      }
+
+      .film-frame::before {
+        width: 38%;
+        aspect-ratio: 1;
+        border: 2px solid var(--ink);
+        border-radius: 50% 50% 46% 54% / 48% 58% 42% 52%;
+        content: "";
+      }
+
+      .release-panel {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        width: var(--page);
+        margin: clamp(1.75rem, 4vh, 3rem) auto 0;
+        border-top: var(--line) solid var(--ink);
+        border-left: var(--line) solid var(--ink);
+      }
+
+      .release-button {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+        gap: 0.18rem 0.7rem;
+        align-items: center;
+        min-height: 4.75rem;
+        padding: 0.8rem 0.9rem;
+        border-right: var(--line) solid var(--ink);
+        border-bottom: var(--line) solid var(--ink);
+        text-decoration: none;
+        transition: color 170ms ease-out, background-color 170ms ease-out;
+      }
+
+      .release-button:hover, .release-button:focus-visible, .release-button.is-current {
+        color: var(--safety);
+        background: var(--ink);
+      }
+
+      .release-button.is-landed { color: var(--white); background: var(--blue); }
+
+      .release-button.is-landed:hover, .release-button.is-landed:focus-visible, .release-button.is-landed.is-current {
+        color: var(--ink);
+        background: var(--coral);
+      }
+
+      .release-no {
+        grid-row: 1 / span 2;
+        font-family: var(--display);
+        font-size: clamp(1.65rem, 2.5vw, 2.25rem);
+        font-variant-numeric: tabular-nums;
+        line-height: 1;
+      }
+
+      .release-name {
+        font-family: var(--mono);
+        font-size: clamp(0.64rem, 0.58rem + 0.18vw, 0.78rem);
+        font-weight: 700;
+        letter-spacing: 0.035em;
+        text-transform: uppercase;
+      }
+
+      .release-state {
+        font-family: var(--mono);
+        font-size: 0.55rem;
+        letter-spacing: 0.07em;
+        opacity: 0.7;
+        text-transform: uppercase;
+      }
+
+      .progress-console {
+        position: fixed;
+        z-index: 15;
+        top: 50%;
+        right: 0;
+        display: grid;
+        grid-template-columns: auto 0.55rem;
+        gap: 0.55rem;
+        align-items: center;
+        padding: 0.6rem 0.65rem 0.6rem 0.75rem;
+        border: 1px solid var(--ink);
+        border-right: 0;
+        color: var(--ink);
+        background: var(--white);
+        font-family: var(--mono);
+        font-size: 0.52rem;
+        text-transform: uppercase;
+        transform: translateY(-50%);
+      }
+
+      .progress-copy { display: grid; gap: 0.15rem; text-align: right; }
+      .progress-copy strong { color: var(--blue); font-size: 0.68rem; font-variant-numeric: tabular-nums; }
+
+      .progress-track {
+        position: relative;
+        width: 0.55rem;
+        height: 6.5rem;
+        border: 1px solid var(--ink);
+        background: var(--paper-deep);
+      }
+
+      .progress-track i {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: calc(var(--progress) * 100%);
+        background: var(--coral);
+        transform-origin: bottom;
+      }
+
+      .manifesto {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.55fr);
+        gap: clamp(2rem, 8vw, 8rem);
+        align-items: end;
+        width: var(--page);
+        min-height: 72svh;
+        margin: 0 auto;
+        padding-block: clamp(6rem, 14vw, 11rem);
+      }
+
+      .manifesto h2 { max-width: 10ch; margin-bottom: 0; font-size: clamp(3.25rem, 7vw, 6rem); }
+      .manifesto p { max-width: 38ch; margin-bottom: 0.3rem; font-size: clamp(1.1rem, 1rem + 0.45vw, 1.42rem); line-height: 1.48; }
+
+      .chapter {
+        position: relative;
+        border-top: var(--line) solid var(--ink);
+        border-bottom: var(--line) solid var(--ink);
+      }
+
+      .chapter-shell {
+        display: grid;
+        grid-template-columns: minmax(20rem, 0.88fr) minmax(0, 1fr);
+        gap: clamp(3rem, 8vw, 8rem);
+        width: var(--page);
+        min-height: 118svh;
+        margin: 0 auto;
+      }
+
+      .chapter-stage {
+        position: sticky;
+        top: clamp(5.5rem, 10vh, 7.5rem);
+        align-self: start;
+        height: min(72vh, 43rem);
+        margin-block: clamp(6rem, 13vh, 9rem);
+        overflow: hidden;
+        border: var(--line) solid currentColor;
+        background:
+          linear-gradient(90deg, transparent calc(25% - 1px), currentColor 25%, transparent calc(25% + 1px) calc(50% - 1px), currentColor 50%, transparent calc(50% + 1px) calc(75% - 1px), currentColor 75%, transparent calc(75% + 1px)),
+          linear-gradient(0deg, transparent calc(25% - 1px), currentColor 25%, transparent calc(25% + 1px) calc(50% - 1px), currentColor 50%, transparent calc(50% + 1px) calc(75% - 1px), currentColor 75%, transparent calc(75% + 1px));
+        background-size: 100% 100%;
+        background-color: var(--stage-bg);
+        background-blend-mode: soft-light;
+        isolation: isolate;
+      }
+
+      .stage-readout {
+        position: absolute;
+        z-index: 3;
+        top: 0;
+        right: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.65rem 0.75rem;
+        border-bottom: 1px solid currentColor;
+        font-family: var(--mono);
+        font-size: 0.53rem;
+        font-variant-numeric: tabular-nums;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .stage-clamp {
+        position: absolute;
+        z-index: 2;
+        top: 2.4rem;
+        left: 50%;
+        width: 7.5rem;
+        height: 1.8rem;
+        border: 2px solid currentColor;
+        border-top: 0;
+        transform: translateX(-50%);
+      }
+
+      .stage-clamp::after {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        width: 1px;
+        height: 18vh;
         background: currentColor;
         content: "";
       }
 
-      .section-line {
-        width: 100%;
+      .landing-pad {
+        position: absolute;
+        right: 14%;
+        bottom: 10%;
+        left: 14%;
+        height: 1.2rem;
+        border: 2px solid currentColor;
+        border-top-width: 0.35rem;
+      }
+
+      .landing-pad::before, .landing-pad::after {
+        position: absolute;
+        top: 100%;
+        width: 18%;
+        height: 1.2rem;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        border-left: 2px solid currentColor;
+        content: "";
+      }
+
+      .landing-pad::before { left: 8%; }
+      .landing-pad::after { right: 8%; }
+
+      .stage-object {
+        position: absolute;
+        z-index: 2;
+        right: 50%;
+        bottom: calc(10% + 1.2rem);
+        transform: translateX(50%) rotate(var(--landing-rotation, 0deg));
+        transform-origin: center bottom;
+      }
+
+      .stage-object.object-sheet {
+        width: clamp(10rem, 22vw, 15rem);
+        aspect-ratio: 0.82;
+        border: 3px solid var(--ink);
+        color: var(--white);
+        background:
+          linear-gradient(90deg, transparent 32%, rgb(255 255 255 / 50%) 33% 34%, transparent 35% 65%, rgb(255 255 255 / 50%) 66% 67%, transparent 68%),
+          linear-gradient(0deg, transparent 32%, rgb(255 255 255 / 50%) 33% 34%, transparent 35% 65%, rgb(255 255 255 / 50%) 66% 67%, transparent 68%),
+          var(--blue);
+        box-shadow: 0.8rem 1.2rem 2rem rgb(36 87 255 / 20%);
+        --landing-rotation: -2deg;
+      }
+
+      .sheet-bars { position: absolute; inset: 0.9rem; display: flex; flex-direction: column; justify-content: space-between; }
+      .sheet-bars::before { width: 38%; height: 0.65rem; background: var(--white); content: ""; }
+
+      .sheet-bars::after {
+        align-self: end;
+        width: 52%;
         height: 1rem;
-        margin-block: 0;
-        color: var(--stone-soft);
+        border: 2px solid var(--white);
+        content: "D26";
+        font-family: var(--mono);
+        font-size: 0.55rem;
+        line-height: 0.75rem;
+        text-align: center;
       }
 
-      .projects {
-        padding-top: clamp(5rem, 9vw, 8rem);
+      .stage-object.object-key {
+        width: clamp(9rem, 19vw, 13rem);
+        color: var(--coral);
+        filter: drop-shadow(0.8rem 1rem 1rem rgb(0 0 0 / 24%));
+        --landing-rotation: 4deg;
       }
 
-      .section-intro {
+      .stage-object.object-key svg { display: block; width: 100%; overflow: visible; }
+
+      .stage-object.object-film {
         display: grid;
-        grid-template-columns: minmax(0, 0.85fr) minmax(18rem, 0.65fr);
-        gap: clamp(2.4rem, 8vw, 8rem);
-        align-items: end;
-        margin-bottom: clamp(3.5rem, 7vw, 6.5rem);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+        width: clamp(14rem, 30vw, 22rem);
+        padding: 0.75rem;
+        border: 3px solid var(--ink);
+        color: var(--ink);
+        background: var(--coral);
+        box-shadow: 0.8rem 1.2rem 2rem rgb(17 17 15 / 22%);
+        --landing-rotation: -3deg;
       }
 
-      h2 {
-        max-width: 11ch;
-        margin-bottom: 0;
-        font-size: clamp(2.35rem, 4.5vw, 4.65rem);
-        letter-spacing: -0.035em;
-      }
-
-      .section-intro p {
-        max-width: 38rem;
-        margin-bottom: 0.55rem;
-        color: var(--bone-dim);
-      }
-
-      .project-path {
-        position: relative;
-      }
-
-      .project-path::before {
-        position: absolute;
-        top: 1rem;
-        bottom: 1rem;
-        left: 1.15rem;
-        width: 1px;
-        background: linear-gradient(var(--copper), var(--line), var(--moss));
-        content: "";
-      }
-
-      .project-path::after {
-        position: absolute;
-        top: 1rem;
-        bottom: 1rem;
-        left: calc(1.15rem - 0.5px);
-        z-index: 0;
-        width: 2px;
-        background: linear-gradient(var(--copper-lit), var(--copper) 66%, var(--moss));
-        box-shadow: 0 0 1rem rgb(202 130 83 / 30%);
-        content: "";
-        transform: scaleY(var(--projects-progress));
-        transform-origin: top;
-        will-change: transform;
-      }
-
-      .project {
-        position: relative;
-        display: grid;
-        grid-template-columns: 3.25rem minmax(0, 1fr);
-        gap: clamp(1.1rem, 3vw, 2.4rem);
-        padding-block: clamp(2.7rem, 6vw, 5.2rem);
-      }
-
-      .project:not(:last-child) {
-        border-bottom: 1px solid var(--line);
-      }
-
-      .project-mark {
-        position: relative;
-        z-index: 1;
+      .stage-film-frame {
         display: grid;
         place-items: center;
-        width: 2.35rem;
-        height: 2.35rem;
-        border: 1px solid var(--copper);
+        aspect-ratio: 0.8;
+        border: 2px solid var(--ink);
+        background: var(--paper);
+      }
+
+      .stage-film-frame::before {
+        width: 38%;
+        aspect-ratio: 1;
+        border: 3px solid var(--ink);
+        border-radius: 50% 50% 44% 56% / 45% 58% 42% 55%;
+        content: "";
+      }
+
+      .stage-film-frame:nth-child(2)::before { width: 48%; border-radius: 0; transform: rotate(45deg); }
+
+      .stage-film-frame:nth-child(3)::before {
+        width: 58%;
+        height: 3px;
+        border: 0;
+        border-radius: 0;
+        background: var(--ink);
+        box-shadow: 0 -0.55rem 0 var(--ink), 0 0.55rem 0 var(--ink);
+      }
+
+      .motion-ok .chapter:not(.is-landed) .stage-object {
+        opacity: 0;
+        transform: translate3d(50%, -72vh, 0) rotate(var(--start-rotation, -7deg));
+      }
+
+      .motion-ok .chapter.is-landed .stage-object { animation: project-drop 760ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+      .impact-wave {
+        position: absolute;
+        z-index: 1;
+        right: 22%;
+        bottom: 10%;
+        left: 22%;
+        height: 1.1rem;
+        border: 3px solid currentColor;
         border-radius: 50%;
-        color: var(--copper-lit);
-        background: var(--void);
+        opacity: 0;
+        transform: scaleX(0.3);
+      }
+
+      .motion-ok .chapter.is-landed .impact-wave { animation: impact-wave 430ms 500ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+      .chapter-copy { position: relative; align-self: center; padding-block: clamp(9rem, 24vh, 18rem); }
+
+      .chapter-index {
+        position: absolute;
+        top: clamp(5.5rem, 17vh, 11rem);
+        right: 0;
+        color: var(--index-color);
         font-family: var(--display);
-        font-size: 0.78rem;
-        font-weight: 700;
-        transition: color 260ms ease, border-color 260ms ease, background-color 260ms ease,
-          box-shadow 260ms ease, transform 260ms cubic-bezier(0.16, 1, 0.3, 1);
+        font-size: clamp(5rem, 11vw, 9rem);
+        font-variant-numeric: tabular-nums;
+        line-height: 0.8;
+        opacity: 0.18;
       }
 
-      .js .project.is-story-current .project-mark {
-        border-color: var(--copper-lit);
-        color: var(--void);
-        background: var(--copper-lit);
-        box-shadow: 0 0 0 0.32rem rgb(202 130 83 / 10%), 0 0 1.3rem rgb(202 130 83 / 42%);
-        transform: scale(1.1);
+      .chapter h2 {
+        position: relative;
+        z-index: 1;
+        max-width: 10ch;
+        margin-bottom: clamp(2rem, 4vw, 3.5rem);
+        font-size: clamp(3.2rem, 6.5vw, 5.8rem);
       }
 
-      .project-content {
-        min-width: 0;
+      .chapter-lede {
+        max-width: 54ch;
+        margin-bottom: 2.5rem;
+        font-size: clamp(1.1rem, 1rem + 0.35vw, 1.35rem);
+        line-height: 1.5;
       }
 
-      .project-heading {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: baseline;
-        justify-content: space-between;
+      .spec-list { max-width: 45rem; margin: 0 0 2.5rem; border-top: 1px solid currentColor; }
+
+      .spec-row {
+        display: grid;
+        grid-template-columns: minmax(8rem, 0.42fr) 1fr;
         gap: 1rem;
-        margin-bottom: 1.3rem;
+        padding-block: 0.75rem;
+        border-bottom: 1px solid currentColor;
       }
 
-      .project-heading h3 {
-        margin-bottom: 0;
-        font-size: clamp(1.7rem, 3.2vw, 2.8rem);
-        letter-spacing: -0.035em;
-      }
+      .spec-list dt, .spec-list dd { margin: 0; }
 
-      .project-type {
-        color: var(--moss);
-        font-family: var(--display);
-        font-size: 0.67rem;
+      .spec-list dt {
+        font-family: var(--mono);
+        font-size: 0.61rem;
         font-weight: 700;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.05em;
         text-transform: uppercase;
       }
 
-      .project-copy {
-        max-width: 60ch;
-        margin-bottom: 1.45rem;
-        color: var(--bone-dim);
+      .spec-list dd { font-size: 0.94rem; line-height: 1.45; }
+
+      .truth-note {
+        max-width: 52ch;
+        margin-bottom: 2.2rem;
+        padding: 0.8rem 0;
+        border-top: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        line-height: 1.55;
+        text-transform: uppercase;
       }
 
-      .project-facts {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.7rem 1.4rem;
-        margin: 0 0 1.7rem;
-        padding: 0;
-        list-style: none;
-      }
-
-      .project-facts li {
+      .project-link {
         position: relative;
-        padding-left: 1rem;
-        color: var(--bone);
-        font-size: 0.88rem;
+        display: inline-flex;
+        align-items: center;
+        min-height: 3.25rem;
+        padding: 0.65rem 4.6rem 0.65rem 0;
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
       }
 
-      .project-facts li::before {
+      .project-link::before {
         position: absolute;
-        top: 0.7em;
-        left: 0;
-        width: 0.38rem;
-        height: 0.38rem;
-        border: 1px solid var(--copper);
+        right: 0;
+        bottom: 1.55rem;
+        width: 3.5rem;
+        height: 2px;
+        background: currentColor;
+        content: "";
+        transform: scaleX(0.72);
+        transform-origin: left;
+        transition: transform 180ms ease-out;
+      }
+
+      .project-link::after {
+        position: absolute;
+        right: 0.05rem;
+        bottom: 1.27rem;
+        width: 0.65rem;
+        height: 0.65rem;
+        border-top: 2px solid currentColor;
+        border-right: 2px solid currentColor;
         content: "";
         transform: rotate(45deg);
       }
 
-      .project-action {
-        display: inline-flex;
+      .project-link:hover::before, .project-link:focus-visible::before { transform: scaleX(1); }
+
+      .chapter--dellamed { --stage-bg: var(--blue-soft); --index-color: var(--blue); color: var(--ink); background: var(--paper); }
+
+      .chapter--dimatos {
+        --stage-bg: #232321;
+        --index-color: var(--coral);
+        color: var(--white);
+        background: var(--ink);
+        border-color: var(--white);
+      }
+
+      .chapter--dimatos .chapter-stage { grid-column: 2; color: var(--white); }
+      .chapter--dimatos .chapter-copy { grid-column: 1; grid-row: 1; }
+      .chapter--dimatos .project-link:focus-visible { outline-color: var(--safety); }
+
+      .chapter--selfie { --stage-bg: var(--paper); --index-color: var(--paper); color: var(--ink); background: var(--coral); }
+
+      .landing { position: relative; min-height: 92svh; overflow: hidden; color: var(--white); background: var(--blue); }
+
+      .landing-inner {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.75fr);
+        gap: clamp(3rem, 8vw, 8rem);
         align-items: center;
-        gap: 0.7rem;
-        color: var(--bone);
-        font-family: var(--display);
-        font-size: 0.76rem;
-        font-weight: 700;
-        letter-spacing: 0.09em;
-        text-decoration-color: var(--copper);
-        text-transform: uppercase;
+        width: var(--page);
+        min-height: 92svh;
+        margin: 0 auto;
+        padding-block: clamp(7rem, 14vw, 12rem);
       }
 
-      .project-action::after {
-        width: 2.8rem;
-        height: 1px;
-        background: currentColor;
-        content: "";
-        transform: scaleX(0.68);
-        transform-origin: left;
-        transition: transform 180ms ease;
-      }
-
-      .project-action:hover::after {
-        transform: scaleX(1);
-      }
-
-      .project--dellamed .project-content {
-        display: grid;
-        grid-template-columns: minmax(0, 1.15fr) minmax(14rem, 0.55fr);
-        column-gap: clamp(2rem, 6vw, 6rem);
-      }
-
-      .project--dellamed .project-heading,
-      .project--dellamed .project-copy,
-      .project--dellamed .project-action {
-        grid-column: 1;
-      }
-
-      .project--dellamed .project-facts {
-        grid-column: 2;
-        grid-row: 1 / span 3;
-        align-content: center;
-        align-self: stretch;
-        padding: 1.5rem 0 1.5rem 1.5rem;
-        border-left: 1px solid var(--line-strong);
-      }
-
-      .project--dimatos .project-content {
-        display: grid;
-        grid-template-columns: minmax(9.5rem, 0.36fr) minmax(0, 0.9fr);
-        gap: clamp(1.8rem, 6vw, 6rem);
-        align-items: center;
-      }
-
-      .project--dimatos .project-glyph {
-        grid-row: 1 / span 3;
-        width: 100%;
-        aspect-ratio: 4 / 5;
-        border-top: 1px solid var(--line-strong);
-        border-bottom: 1px solid var(--line-strong);
-      }
-
-      .project--dimatos .project-glyph svg {
-        width: 100%;
-        height: 100%;
-        color: var(--moss);
-      }
-
-      .project--selfie .project-content {
-        display: grid;
-        grid-template-columns: minmax(0, 0.93fr) minmax(14rem, 0.67fr);
-        gap: clamp(1.8rem, 5vw, 5.4rem);
-        align-items: start;
-      }
-
-      .project--selfie .project-aside {
-        padding: clamp(1.4rem, 3vw, 2.25rem);
-        border: 1px solid var(--line);
-        background: rgb(48 43 36 / 35%);
-        box-shadow: 0 1.25rem 3rem rgb(0 0 0 / 18%);
-      }
-
-      .project-aside p {
-        margin-bottom: 0;
-        color: var(--bone);
-        font-family: var(--display);
-        font-size: clamp(1.1rem, 1.5vw, 1.4rem);
-        line-height: 1.4;
-      }
-
-      .project-aside svg {
-        display: block;
-        width: 5rem;
-        height: 1.4rem;
-        margin-bottom: 1.3rem;
-        color: var(--copper);
-      }
-
-      .process {
-        display: grid;
-        grid-template-columns: 0.43fr 1fr;
-        gap: clamp(2rem, 8vw, 8rem);
-        align-items: start;
-        padding-block: clamp(6rem, 11vw, 10rem);
-      }
-
-      .process-shape {
-        position: relative;
-        min-height: 18rem;
-        overflow: hidden;
-        border-top: 1px solid var(--copper);
-        border-bottom: 1px solid var(--line);
-      }
-
-      .process-shape::before,
-      .process-shape::after {
-        position: absolute;
-        border: 1px solid var(--line-strong);
-        border-radius: 50%;
-        content: "";
-      }
-
-      .process-shape::before {
-        top: 15%;
-        left: -14%;
-        width: 15rem;
-        height: 15rem;
-        transform: translate3d(var(--process-ring-x), var(--process-ring-y), 0)
-          scale(var(--process-ring-scale));
-        transform-origin: center;
-        will-change: transform;
-      }
-
-      .process-shape::after {
-        right: -25%;
-        bottom: -15%;
-        width: 18rem;
-        height: 18rem;
-        border-color: rgb(202 130 83 / 34%);
-        transform: translate3d(var(--process-orbit-x), var(--process-orbit-y), 0)
-          scale(var(--process-orbit-scale));
-        transform-origin: center;
-        will-change: transform;
-      }
-
-      .process h2 {
-        max-width: 13ch;
-      }
-
-      .process-copy {
-        max-width: 53rem;
-      }
-
-      .process-copy p {
-        color: var(--bone-dim);
-      }
-
-      .process-copy p:last-child {
-        margin-bottom: 0;
-        color: var(--bone);
-        font-size: clamp(1.22rem, 1.65vw, 1.55rem);
-        line-height: 1.5;
-      }
-
-      .closing {
-        position: relative;
-        display: grid;
-        grid-template-columns: minmax(0, 0.9fr) minmax(16rem, 0.5fr);
-        gap: clamp(2.2rem, 7vw, 7rem);
-        align-items: end;
-        margin-bottom: clamp(4rem, 8vw, 7rem);
-        padding: clamp(2.3rem, 5vw, 4.25rem) 0 0;
-        border-top: 1px solid var(--line-strong);
-      }
-
-      .closing h2 {
-        max-width: 13ch;
-        margin-bottom: 1.25rem;
-      }
-
-      .closing p {
-        max-width: 39rem;
-        margin-bottom: 0;
-        color: var(--bone-dim);
-      }
+      .landing h2 { max-width: 8ch; margin-bottom: 2rem; font-size: clamp(3.4rem, 7vw, 6rem); }
+      .landing p { max-width: 54ch; margin-bottom: 2.1rem; font-size: clamp(1.05rem, 1rem + 0.3vw, 1.3rem); }
 
       .return-link {
-        justify-self: end;
-        color: var(--copper-lit);
-        font-family: var(--display);
-        font-size: 0.75rem;
+        display: inline-block;
+        min-height: 2.75rem;
+        color: var(--safety);
+        font-family: var(--mono);
+        font-size: 0.72rem;
         font-weight: 700;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.05em;
         text-transform: uppercase;
       }
+
+      .parts-tray {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: end;
+        min-height: 24rem;
+        padding: 2rem 1.5rem 3.5rem;
+        border: 2px solid var(--white);
+      }
+
+      .parts-tray::before {
+        position: absolute;
+        right: 1.5rem;
+        bottom: 2.6rem;
+        left: 1.5rem;
+        height: 0.85rem;
+        border: 2px solid var(--white);
+        background: var(--ink);
+        content: "";
+      }
+
+      .tray-part {
+        position: relative;
+        z-index: 1;
+        justify-self: center;
+        transform-origin: bottom;
+        transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .parts-tray:hover .tray-part:nth-child(1) { transform: rotate(-4deg) translateY(-0.25rem); }
+      .parts-tray:hover .tray-part:nth-child(2) { transform: rotate(3deg) translateY(-0.45rem); }
+      .parts-tray:hover .tray-part:nth-child(3) { transform: rotate(-2deg) translateY(-0.2rem); }
+
+      .tray-sheet { width: 5.2rem; aspect-ratio: 0.8; border: 2px solid var(--white); background: var(--safety); }
+      .tray-key { width: 5.5rem; color: var(--coral); }
+      .tray-key svg { display: block; width: 100%; }
+
+      .tray-film { display: grid; gap: 0.25rem; width: 4rem; padding: 0.35rem; border: 2px solid var(--white); background: var(--coral); }
+      .tray-film i { display: block; aspect-ratio: 1; border: 1px solid var(--white); }
 
       .site-footer {
-        width: var(--page-width);
-        margin: 0 auto;
-        padding: 1.5rem 0 2.6rem;
-        border-top: 1px solid var(--line);
-        color: var(--stone-soft);
-        font-family: var(--display);
-        font-size: 0.65rem;
-        font-weight: 700;
-        letter-spacing: 0.1em;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        width: 100%;
+        padding: 1.1rem max(1rem, calc((100% - 1220px) / 2));
+        border-top: 2px solid var(--white);
+        color: var(--white);
+        background: var(--ink);
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        letter-spacing: 0.05em;
         text-transform: uppercase;
       }
 
-      .js .reveal {
-        opacity: 0;
-        filter: blur(5px);
-        transform: translateY(20px);
-        transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1), filter 700ms ease, transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
-        transition-delay: var(--reveal-delay, 0ms);
+      .cursor { display: none; }
+
+      @keyframes test-pulse {
+        0%, 100% { transform: translateY(0) rotate(var(--rest-rotation, 0deg)) scale(1); }
+        45% { transform: translateY(-0.8rem) rotate(0deg) scale(1.06); }
       }
 
-      .js .reveal.is-visible {
-        opacity: 1;
-        filter: blur(0);
-        transform: translateY(0);
+      @keyframes project-drop {
+        0% { opacity: 0.22; transform: translate3d(50%, -72vh, 0) rotate(var(--start-rotation, -7deg)); }
+        70% { opacity: 1; transform: translate3d(50%, 0.9rem, 0) rotate(calc(var(--landing-rotation, 0deg) * -0.35)); }
+        86% { transform: translate3d(50%, -0.45rem, 0) rotate(var(--landing-rotation, 0deg)); }
+        100% { opacity: 1; transform: translateX(50%) rotate(var(--landing-rotation, 0deg)); }
       }
 
-      .project--dimatos {
-        --reveal-delay: 80ms;
+      @keyframes impact-wave {
+        0% { opacity: 0.75; transform: scaleX(0.25); }
+        100% { opacity: 0; transform: scaleX(1.45); }
       }
 
-      .project--selfie,
-      .process-copy {
-        --reveal-delay: 140ms;
-      }
+      @media (hover: hover) and (pointer: fine) {
+        html.cursor-enabled body, html.cursor-enabled a { cursor: none; }
 
-      @media (max-width: 840px) {
-        :root {
-          --page-width: min(100% - 2.5rem, 680px);
-        }
-
-        .hero {
-          grid-template-columns: 1fr;
-          padding-top: 4.5rem;
-        }
-
-        .hero-visual {
-          min-height: 21rem;
-          margin-top: 1.2rem;
-        }
-
-        .hero-note {
-          right: auto;
+        html.cursor-enabled .cursor {
+          position: fixed;
+          z-index: 300;
+          top: 0;
           left: 0;
+          display: grid;
+          place-items: center;
+          width: 1.65rem;
+          height: 1.65rem;
+          border: 2px solid var(--ink);
+          border-radius: 50%;
+          pointer-events: none;
+          background: var(--safety);
+          box-shadow: 0 4px 14px rgb(17 17 15 / 18%);
+          opacity: 0;
+          transform: translate3d(-50%, -50%, 0);
+          transition: width 150ms ease-out, height 150ms ease-out, border-radius 150ms ease-out, background-color 150ms ease-out, opacity 120ms ease-out;
+          will-change: transform;
         }
 
-        .story-rail {
-          display: none;
+        html.cursor-enabled .cursor.is-visible { opacity: 1; }
+
+        html.cursor-enabled .cursor.is-active {
+          width: 5.6rem;
+          height: 2rem;
+          border-radius: 0;
+          color: var(--white);
+          background: var(--blue);
         }
 
-        .section-intro,
-        .process,
-        .closing {
-          grid-template-columns: 1fr;
-        }
-
-        .section-intro {
-          gap: 1.6rem;
-        }
-
-        .process-shape {
-          min-height: 10rem;
-        }
-
-        .return-link {
-          justify-self: start;
-        }
+        .cursor-dot { width: 0.28rem; height: 0.28rem; border-radius: 50%; background: var(--ink); }
+        .cursor-label { display: none; font-family: var(--mono); font-size: 0.54rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+        .cursor.is-active .cursor-dot { display: none; }
+        .cursor.is-active .cursor-label { display: block; }
       }
 
-      @media (max-width: 620px) {
-        .site-header {
-          min-height: 5.1rem;
-        }
+      @media (max-width: 980px) {
+        .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(19rem, 0.72fr); gap: 2rem; }
+        .hero h1 { font-size: clamp(3.5rem, 8.5vw, 5.5rem); }
+        .progress-console { display: none; }
+        .chapter-shell { gap: clamp(2rem, 5vw, 4rem); }
+        .chapter h2 { font-size: clamp(3rem, 6.8vw, 5rem); }
+      }
 
-        .monogram {
-          font-size: 0;
-        }
+      @media (max-width: 1540px) {
+        .progress-console { display: none; }
+      }
 
-        .monogram::before {
-          width: 1.45rem;
-          height: 1.45rem;
-        }
-
-        .site-nav {
-          gap: 1.1rem;
-        }
-
-        .site-nav a {
-          font-size: 0.63rem;
-        }
-
+      @media (max-width: 760px) {
+        :root { --header-h: 3.9rem; --page: calc(100% - 1.5rem); }
+        .site-header { padding-inline: 0.75rem; }
+        .header-readout span:not(.header-led) { display: none; }
         .hero {
+          display: flex;
+          flex-direction: column;
           min-height: auto;
-          padding-block: 4rem 3.2rem;
+          padding-top: calc(var(--header-h) + 2.7rem);
+        }
+        .hero-grid { display: contents; }
+        .hero-copy { order: 1; width: var(--page); margin-inline: auto; padding-top: 0; }
+        .hero h1 { max-width: 7.5ch; font-size: clamp(3.2rem, 15vw, 5.25rem); }
+        .hero-lede { margin-bottom: 1.6rem; font-size: 1.08rem; }
+        .scroll-cue { display: none; }
+        .drop-rig { order: 3; width: var(--page); min-height: 25rem; margin: 1.25rem auto 0; }
+        .rig-lanes { min-height: 22rem; }
+        .release-panel { order: 2; grid-template-columns: 1fr; margin-top: 1.25rem; }
+        .release-button { min-height: 3.8rem; }
+        .manifesto { grid-template-columns: 1fr; min-height: auto; padding-block: 7rem; }
+        .manifesto h2 { font-size: clamp(3rem, 14vw, 5rem); }
+        .chapter-shell { grid-template-columns: 1fr; min-height: auto; }
+
+        .chapter-stage, .chapter--dimatos .chapter-stage {
+          position: relative;
+          top: auto;
+          grid-column: 1;
+          grid-row: auto;
+          height: min(68svh, 31rem);
+          margin: 5rem 0 0;
         }
 
-        .hero-visual {
-          min-height: 17rem;
+        .chapter-copy, .chapter--dimatos .chapter-copy {
+          grid-column: 1;
+          grid-row: auto;
+          padding-block: 5.5rem 7rem;
         }
 
-        .project {
-          grid-template-columns: 2.8rem minmax(0, 1fr);
-          gap: 1rem;
-        }
+        .chapter-index { top: 3rem; font-size: 6rem; }
+        .chapter h2 { font-size: clamp(3rem, 14vw, 5rem); }
+        .stage-object.object-sheet { width: min(44vw, 12rem); }
+        .stage-object.object-key { width: min(38vw, 11rem); }
+        .stage-object.object-film { width: min(68vw, 19rem); }
+        .landing-inner { grid-template-columns: 1fr; min-height: auto; }
+        .landing h2 { font-size: clamp(3.1rem, 14vw, 5rem); }
+        .parts-tray { min-height: 20rem; }
+        .site-footer { flex-direction: column; }
+      }
 
-        .project--dellamed .project-content,
-        .project--dimatos .project-content,
-        .project--selfie .project-content {
-          display: block;
-        }
-
-        .project--dellamed .project-facts {
-          margin-top: 1.5rem;
-          padding: 1rem 0 0;
-          border-top: 1px solid var(--line-strong);
-          border-left: 0;
-        }
-
-        .project--dimatos .project-glyph {
-          width: min(12rem, 55%);
-          margin-bottom: 1.6rem;
-          aspect-ratio: 5 / 2;
-        }
-
-        .project--selfie .project-aside {
-          margin-top: 1.8rem;
-        }
+      @media (max-width: 430px) {
+        .brand { font-size: 0.62rem; }
+        .hero h1 { font-size: clamp(3rem, 14.4vw, 4.25rem); }
+        .rig-top span:last-child, .lane-label { display: none; }
+        .prototype-sheet { width: 3.8rem; }
+        .prototype-key { width: 3.6rem; }
+        .prototype-film { width: 3.2rem; }
+        .spec-row { grid-template-columns: 1fr; gap: 0.25rem; }
       }
 
       @media (prefers-reduced-motion: reduce) {
-        html {
-          scroll-behavior: auto;
-        }
-
-        *,
-        *::before,
-        *::after {
-          animation-duration: 0.01ms !important;
+        html { scroll-behavior: auto; }
+        *, *::before, *::after {
           scroll-behavior: auto !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
           transition-duration: 0.01ms !important;
-          transition-delay: 0ms !important;
         }
-
-        .story-rail {
-          display: none;
-        }
-
-        .static-relic {
-          opacity: 0.45;
-        }
+        .cursor { display: none !important; }
       }
     </style>
   </head>
   <body>
-    <!--
-      THESIS: A personal portfolio as a weathered digital relic, refusing the generic grid of project cards.
-      OWN-WORLD: Obsidian, copper and low mist; etched circles, measured seams and an abstract celestial object carry the identity.
-      STORY: Visitors meet Lucas, understand the purpose of each project and can open any of the three studies.
-      FIRST VIEWPORT: A large statement sits left; a layered relic scene floats in its own field to the right; the project action is immediately visible.
-      FORM: Multiplane relic field, shaped by the brief-pinned mythic atmosphere; seed 8d108112.
-      FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
-    -->
     <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-    <div class="story-rail" aria-hidden="true"><span></span></div>
+
+    <div class="cursor" aria-hidden="true">
+      <span class="cursor-dot"></span>
+      <span class="cursor-label">ABRIR</span>
+    </div>
 
     <header class="site-header">
-      <a class="monogram" href="#inicio" aria-label="Voltar ao início do portfólio de Lucas de Matos">Lucas de Matos</a>
-      <nav class="site-nav" aria-label="Navegação principal">
-        <a href="#projetos">Projetos</a>
-        <a href="#percurso">Percurso</a>
-      </nav>
+      <a class="brand" href="#inicio" data-cursor-label="INÍCIO" aria-label="Voltar ao início">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        Lucas de Matos
+      </a>
+      <div class="header-readout" aria-hidden="true">
+        <span class="header-led"></span>
+        <span>Laboratório de ideias</span>
+        <span>2026 / BR</span>
+      </div>
     </header>
 
     <main id="conteudo">
       <section class="hero" id="inicio" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <h1 id="hero-title"><span>Ideias ganham</span><span>forma com</span><span>direção.</span></h1>
-          <p>
-            Gosto de transformar uma necessidade clara em uma experiência bem resolvida.
-            <strong>Com visão, direcionamento e atenção ao que importa,</strong> construo com
-            intenção — e sigo amadurecendo cada projeto pelo caminho.
-          </p>
-          <div class="hero-actions">
-            <a class="primary-link" href="#projetos" aria-label="Ir para a seção de projetos">Ver projetos</a>
-            <a class="quiet-link" href="#percurso" aria-label="Ler sobre o meu percurso">Conhecer o percurso</a>
-          </div>
-        </div>
-
-        <div class="hero-visual" aria-hidden="true">
-          <div class="static-relic">
-            <svg viewBox="0 0 560 520" fill="none" focusable="false">
-              <circle cx="291" cy="253" r="149" stroke="currentColor" stroke-width="1.2" stroke-dasharray="150 22 48 19" />
-              <circle cx="291" cy="253" r="105" stroke="currentColor" stroke-width="1" stroke-dasharray="7 19" opacity=".55" />
-              <path d="M292 62v66M292 378v72M101 253h70M413 253h76M156 119l46 47M379 342l48 47M425 119l-47 48M205 342l-49 49" stroke="currentColor" stroke-width="1.2" />
-              <path d="M291 175l35 31-8 47-45 20-37-31 9-47 46-20Z" stroke="currentColor" stroke-width="1.5" />
-              <circle cx="291" cy="226" r="10" fill="currentColor" opacity=".72" />
-              <path d="M133 349c38-52 91-77 158-77 68 0 120 25 156 77" stroke="currentColor" stroke-width="1" opacity=".48" />
-            </svg>
-          </div>
-          <div id="scene-root"></div>
-          <span class="hero-note">Relíquia em estudo</span>
-        </div>
-      </section>
-
-      <svg class="section-line" viewBox="0 0 1160 18" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-        <path d="M0 9H451l10-5 10 10 10-5h679" fill="none" stroke="currentColor" stroke-width="1" />
-      </svg>
-
-      <section class="projects" id="projetos" aria-labelledby="projects-title">
-        <header class="section-intro reveal">
-          <h2 id="projects-title">Três momentos do caminho.</h2>
-          <p>
-            Projetos em fases diferentes, unidos pelo mesmo interesse: construir com intenção,
-            aprender no processo e deixar a experiência mais clara para quem usa.
-          </p>
-        </header>
-
-        <div class="project-path">
-          <article class="project project--dellamed reveal" aria-labelledby="dellamed-title">
-            <span class="project-mark" aria-hidden="true">I</span>
-            <div class="project-content">
-              <div class="project-heading">
-                <h3 id="dellamed-title">Dellamed 2026</h3>
-                <span class="project-type">Estudo de interface</span>
-              </div>
-              <p class="project-copy">
-                Um estudo visual baseado no site da empresa onde trabalho. A ideia foi observar
-                uma presença digital existente e explorar uma leitura mais atual, organizada e
-                cuidadosa — como exercício de repertório e direção de interface.
-              </p>
-              <ul class="project-facts" aria-label="Contexto do projeto Dellamed 2026">
-                <li>Estudo conceitual</li>
-                <li>Baseado em referência pública</li>
-                <li>Não é projeto oficial da Dellamed</li>
-              </ul>
-              <a
-                class="project-action"
-                href="https://lucasdematos.github.io/dellamed-2026/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Abrir o estudo conceitual Dellamed 2026 em nova aba"
-              >Abrir estudo</a>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <h1 id="hero-title">
+              <span>Ideias</span>
+              <span>precisam</span>
+              <span>aterrissar.</span>
+            </h1>
+            <p class="hero-lede">
+              Eu sou Lucas. Transformo intenção em experiência —
+              <strong>uma interface mais clara, uma base que funciona ou um detalhe feito para alguém.</strong>
+              Três projetos mostram onde isso começou.
+            </p>
+            <div class="scroll-cue" aria-hidden="true">
+              Role para aplicar gravidade
+              <span class="scroll-cue-line"></span>
             </div>
-          </article>
+          </div>
 
-          <article class="project project--dimatos reveal" aria-labelledby="dimatos-title">
-            <span class="project-mark" aria-hidden="true">II</span>
-            <div class="project-content">
-              <div class="project-glyph" aria-hidden="true">
-                <svg viewBox="0 0 180 220" fill="none" focusable="false">
-                  <path d="M90 16v188M33 60l57-44 57 44M33 160l57 44 57-44" stroke="currentColor" stroke-width="1.3" />
-                  <circle cx="90" cy="110" r="41" stroke="currentColor" stroke-width="1.3" stroke-dasharray="8 12" />
-                  <path d="M65 110h50M90 85v50" stroke="currentColor" stroke-width="1.3" />
-                </svg>
-              </div>
-              <div class="project-heading">
-                <h3 id="dimatos-title">DiMatOS 07</h3>
-                <span class="project-type">Fundação técnica</span>
-              </div>
-              <p class="project-copy">
-                Meu começo numa construção mais completa: domínio e hospedagem próprios, banco
-                de dados e fluxo de login. Foi onde comecei a entender que uma base funcional
-                também faz parte da experiência de quem usa.
-              </p>
-              <ul class="project-facts" aria-label="Contexto do projeto DiMatOS 07">
-                <li>Domínio e hospedagem próprios</li>
-                <li>Banco de dados</li>
-                <li>Login</li>
-              </ul>
-              <a
-                class="project-action"
-                href="https://www.dimatos07.com.br/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Conhecer o projeto DiMatOS 07 em nova aba"
-              >Conhecer projeto</a>
+          <div class="drop-rig" aria-hidden="true">
+            <div class="rig-top">
+              <span>Banco de teste / 03 objetos</span>
+              <span>Gravidade: em espera</span>
             </div>
-          </article>
-
-          <article class="project project--selfie reveal" aria-labelledby="selfie-title">
-            <span class="project-mark" aria-hidden="true">III</span>
-            <div class="project-content">
-              <div>
-                <div class="project-heading">
-                  <h3 id="selfie-title">SelfieSpace</h3>
-                  <span class="project-type">Landing page pessoal</span>
+            <div class="rig-lanes">
+              <div class="rig-lane" data-rig-object="dellamed">
+                <span class="lane-label">Interface / 01</span>
+                <div class="prototype prototype-sheet"><strong>D26</strong></div>
+              </div>
+              <div class="rig-lane" data-rig-object="dimatos">
+                <span class="lane-label">Sistema / 02</span>
+                <div class="prototype prototype-key">
+                  <svg viewBox="0 0 120 150" fill="none" focusable="false">
+                    <circle cx="60" cy="44" r="30" fill="#f1ed39" stroke="currentColor" stroke-width="10" />
+                    <circle cx="60" cy="44" r="9" fill="currentColor" />
+                    <path d="M60 74v58M60 101h26v17H73v14" stroke="currentColor" stroke-width="12" stroke-linejoin="miter" />
+                    <path d="M42 89h36" stroke="#2457ff" stroke-width="5" />
+                  </svg>
                 </div>
-                <p class="project-copy">
-                  Uma landing page que fiz como presente para minha namorada. Um projeto pessoal
-                  em que conteúdo, clima e pequenos detalhes precisavam parecer feitos para
-                  alguém — não apenas montados.
-                </p>
-                <ul class="project-facts" aria-label="Contexto do projeto SelfieSpace">
-                  <li>Presente pessoal</li>
-                  <li>Landing page</li>
-                  <li>Foco em presença e detalhes</li>
-                </ul>
-                <a
-                  class="project-action"
-                  href="https://lucasdematos.github.io/SelfieSpace/"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Abrir a landing page pessoal SelfieSpace em nova aba"
-                >Ver SelfieSpace</a>
               </div>
-              <aside class="project-aside" aria-label="Nota sobre SelfieSpace">
-                <svg viewBox="0 0 92 22" fill="none" aria-hidden="true" focusable="false">
-                  <path d="M1 11h29l8-8 8 16 8-16 8 8h29" stroke="currentColor" stroke-width="1.3" />
-                </svg>
-                <p>“Fazer algo pessoal também é uma forma de aprender a escutar a intenção.”</p>
-              </aside>
+              <div class="rig-lane" data-rig-object="selfie">
+                <span class="lane-label">Presença / 03</span>
+                <div class="prototype prototype-film">
+                  <span class="film-frame"></span>
+                  <span class="film-frame"></span>
+                  <span class="film-frame"></span>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+
+        <nav class="release-panel" aria-label="Escolher um dos três projetos">
+          <a class="release-button" href="#dellamed" data-project-button="dellamed" data-cursor-label="SOLTAR 01">
+            <span class="release-no">01</span>
+            <span class="release-name">Dellamed 2026</span>
+            <span class="release-state">Armado</span>
+          </a>
+          <a class="release-button" href="#dimatos" data-project-button="dimatos" data-cursor-label="SOLTAR 02">
+            <span class="release-no">02</span>
+            <span class="release-name">DiMatOS 07</span>
+            <span class="release-state">Armado</span>
+          </a>
+          <a class="release-button" href="#selfiespace" data-project-button="selfie" data-cursor-label="SOLTAR 03">
+            <span class="release-no">03</span>
+            <span class="release-name">SelfieSpace</span>
+            <span class="release-state">Armado</span>
+          </a>
+        </nav>
+      </section>
+
+      <aside class="progress-console" aria-hidden="true">
+        <span class="progress-copy">
+          <strong data-progress-number>00</strong>
+          <span data-progress-label>Sistema armado</span>
+        </span>
+        <span class="progress-track"><i></i></span>
+      </aside>
+
+      <section class="manifesto" aria-labelledby="manifesto-title">
+        <h2 id="manifesto-title">Role. A gravidade faz o resto.</h2>
+        <p>
+          Cada queda revela uma parte do processo: primeiro organizar o que já existe,
+          depois construir o que sustenta e, por fim, cuidar do que faz uma experiência ser pessoal.
+        </p>
+      </section>
+
+      <section class="chapter chapter--dellamed" id="dellamed" data-chapter="dellamed" aria-labelledby="dellamed-title">
+        <div class="chapter-shell">
+          <div class="chapter-stage" aria-hidden="true">
+            <div class="stage-readout">
+              <span>Objeto 01 / Lâmina editorial</span>
+              <span>Estado: <b data-stage-state>aguardando</b></span>
+            </div>
+            <span class="stage-clamp"></span>
+            <div class="stage-object object-sheet"><span class="sheet-bars"></span></div>
+            <span class="impact-wave"></span>
+            <span class="landing-pad"></span>
+          </div>
+
+          <article class="chapter-copy">
+            <span class="chapter-index" aria-hidden="true">01</span>
+            <h2 id="dellamed-title">Reorganizar o que já existe.</h2>
+            <p class="chapter-lede">
+              Dellamed 2026 nasceu da observação de uma presença digital real.
+              Reordenei hierarquia, ritmo e leitura para estudar como uma interface conhecida
+              pode ganhar uma direção mais clara e atual.
+            </p>
+            <dl class="spec-list">
+              <div class="spec-row"><dt>Movimento</dt><dd>Da referência existente para uma leitura mais organizada.</dd></div>
+              <div class="spec-row"><dt>O que exercitei</dt><dd>Direção visual, hierarquia de informação e cuidado de interface.</dd></div>
+              <div class="spec-row"><dt>Natureza</dt><dd>Estudo conceitual baseado em uma referência pública.</dd></div>
+            </dl>
+            <p class="truth-note">
+              Transparência de escopo: este é um estudo pessoal e não um projeto oficial da Dellamed.
+            </p>
+            <a class="project-link" href="https://lucasdematos.github.io/dellamed-2026/" target="_blank" rel="noreferrer" data-cursor-label="ABRIR ESTUDO">Abrir estudo — nova aba</a>
           </article>
         </div>
       </section>
 
-      <section class="process" id="percurso" aria-labelledby="process-title">
-        <div class="process-shape reveal" aria-hidden="true"></div>
-        <div class="process-copy reveal">
-          <h2 id="process-title">Antes da tela, a intenção.</h2>
-          <p>
-            Não parto de uma fórmula pronta. Tento entender o que a ideia precisa comunicar,
-            organizo prioridades e uso o design para dar clareza ao caminho.
-          </p>
-          <p>
-            Estes trabalhos ainda estão amadurecendo, mas já deixam claro o que quero levar
-            adiante: com uma visão bem definida, posso entregar algo de valor e qualidade.
-          </p>
+      <section class="chapter chapter--dimatos" id="dimatos" data-chapter="dimatos" aria-labelledby="dimatos-title">
+        <div class="chapter-shell">
+          <div class="chapter-stage" aria-hidden="true">
+            <div class="stage-readout">
+              <span>Objeto 02 / Chave modular</span>
+              <span>Estado: <b data-stage-state>aguardando</b></span>
+            </div>
+            <span class="stage-clamp"></span>
+            <div class="stage-object object-key">
+              <svg viewBox="0 0 180 220" fill="none" focusable="false">
+                <circle cx="90" cy="66" r="44" fill="#f1ed39" stroke="currentColor" stroke-width="14" />
+                <circle cx="90" cy="66" r="13" fill="currentColor" />
+                <path d="M90 110v86M90 145h42v26h-21v25" stroke="currentColor" stroke-width="18" />
+                <path d="M62 132h56" stroke="#2457ff" stroke-width="8" />
+                <circle cx="62" cy="132" r="6" fill="#f4f1e7" />
+                <circle cx="90" cy="132" r="6" fill="#f4f1e7" />
+                <circle cx="118" cy="132" r="6" fill="#f4f1e7" />
+              </svg>
+            </div>
+            <span class="impact-wave"></span>
+            <span class="landing-pad"></span>
+          </div>
+
+          <article class="chapter-copy">
+            <span class="chapter-index" aria-hidden="true">02</span>
+            <h2 id="dimatos-title">Antes da tela, a estrutura.</h2>
+            <p class="chapter-lede">
+              DiMatOS 07 foi meu primeiro mergulho numa construção mais completa.
+              A experiência deixou de ser só o que aparece: passou a incluir o caminho que autentica,
+              guarda e mantém tudo de pé.
+            </p>
+            <dl class="spec-list">
+              <div class="spec-row"><dt>Entrada</dt><dd>Domínio e hospedagem próprios.</dd></div>
+              <div class="spec-row"><dt>Núcleo</dt><dd>Banco de dados para sustentar o conteúdo.</dd></div>
+              <div class="spec-row"><dt>Acesso</dt><dd>Fluxo de login como parte da experiência.</dd></div>
+            </dl>
+            <a class="project-link" href="https://www.dimatos07.com.br/" target="_blank" rel="noreferrer" data-cursor-label="CONHECER">Conhecer projeto — nova aba</a>
+          </article>
         </div>
       </section>
 
-      <section class="closing reveal" aria-labelledby="closing-title">
-        <div>
-          <h2 id="closing-title">O próximo capítulo começa com uma boa direção.</h2>
-          <p>
-            Este portfólio é um registro honesto de construção contínua: mais repertório, mais
-            cuidado e cada vez mais clareza sobre o que uma experiência precisa ser.
-          </p>
+      <section class="chapter chapter--selfie" id="selfiespace" data-chapter="selfie" aria-labelledby="selfie-title">
+        <div class="chapter-shell">
+          <div class="chapter-stage" aria-hidden="true">
+            <div class="stage-readout">
+              <span>Objeto 03 / Tira de momentos</span>
+              <span>Estado: <b data-stage-state>aguardando</b></span>
+            </div>
+            <span class="stage-clamp"></span>
+            <div class="stage-object object-film">
+              <span class="stage-film-frame"></span>
+              <span class="stage-film-frame"></span>
+              <span class="stage-film-frame"></span>
+            </div>
+            <span class="impact-wave"></span>
+            <span class="landing-pad"></span>
+          </div>
+
+          <article class="chapter-copy">
+            <span class="chapter-index" aria-hidden="true">03</span>
+            <h2 id="selfie-title">Detalhe é uma forma de escuta.</h2>
+            <p class="chapter-lede">
+              SelfieSpace foi feito como presente para minha namorada.
+              Nesse projeto, conteúdo, clima e pequenos gestos precisavam parecer escolhidos para alguém —
+              não apenas encaixados numa página.
+            </p>
+            <dl class="spec-list">
+              <div class="spec-row"><dt>Origem</dt><dd>Uma landing page criada como presente pessoal.</dd></div>
+              <div class="spec-row"><dt>Critério</dt><dd>Fazer cada detalhe carregar intenção e presença.</dd></div>
+              <div class="spec-row"><dt>Aprendizado</dt><dd>Projetar também é escutar para quem aquilo existe.</dd></div>
+            </dl>
+            <a class="project-link" href="https://lucasdematos.github.io/SelfieSpace/" target="_blank" rel="noreferrer" data-cursor-label="VER PROJETO">Ver SelfieSpace — nova aba</a>
+          </article>
         </div>
-        <a class="return-link" href="#inicio" aria-label="Voltar ao início da página">Voltar ao início</a>
+      </section>
+
+      <section class="landing" id="percurso" aria-labelledby="landing-title">
+        <div class="landing-inner">
+          <div>
+            <h2 id="landing-title">Três quedas. Uma direção.</h2>
+            <p>
+              Interface, estrutura e presença são partes do mesmo trabalho:
+              entender a intenção, dar forma ao que importa e continuar refinando até a ideia aterrissar.
+            </p>
+            <a class="return-link" href="#inicio" data-cursor-label="VOLTAR">Voltar ao início</a>
+          </div>
+          <div class="parts-tray" aria-hidden="true">
+            <span class="tray-part tray-sheet"></span>
+            <span class="tray-part tray-key">
+              <svg viewBox="0 0 100 130" fill="none" focusable="false">
+                <circle cx="50" cy="38" r="28" stroke="currentColor" stroke-width="10" />
+                <path d="M50 66v54M50 88h27v17H64v15" stroke="currentColor" stroke-width="12" />
+              </svg>
+            </span>
+            <span class="tray-part tray-film"><i></i><i></i><i></i></span>
+          </div>
+        </div>
       </section>
     </main>
 
-    <footer class="site-footer">Lucas de Matos · portfólio em construção contínua</footer>
+    <footer class="site-footer">
+      <span>Lucas de Matos / Portfólio</span>
+      <span>Três projetos em construção contínua</span>
+    </footer>
 
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/three@0.170.0/build/three.min.js" crossorigin></script>
     <script>
       (() => {
-        if (!window.React || !window.ReactDOM) {
-          return;
-        }
+        const root = document.documentElement;
+        const chapters = [...document.querySelectorAll("[data-chapter]")];
+        const projectButtons = [...document.querySelectorAll("[data-project-button]")];
+        const rigLanes = [...document.querySelectorAll("[data-rig-object]")];
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+        const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+        const progressNumber = document.querySelector("[data-progress-number]");
+        const progressLabel = document.querySelector("[data-progress-label]");
+        const landed = new Set();
+        let previousY = window.scrollY;
+        let scrollFrame = 0;
 
-        const h = window.React.createElement;
-        const { useEffect, useRef } = window.React;
+        const chapterName = {
+          dellamed: "Dellamed pousou",
+          dimatos: "DiMatOS pousou",
+          selfie: "SelfieSpace pousou"
+        };
 
-        function RelicScene() {
-          const hostRef = useRef(null);
+        const setActive = (id) => {
+          projectButtons.forEach((button) => {
+            const isCurrent = button.dataset.projectButton === id;
+            button.classList.toggle("is-current", isCurrent);
+            if (isCurrent) button.setAttribute("aria-current", "location");
+            else button.removeAttribute("aria-current");
+          });
 
-          useEffect(() => {
-            const host = hostRef.current;
-            const THREE = window.THREE;
-            const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-            const mobile = window.matchMedia("(max-width: 620px)").matches;
+          if (progressNumber) {
+            const index = ["dellamed", "dimatos", "selfie"].indexOf(id);
+            progressNumber.textContent = index >= 0 ? String(index + 1).padStart(2, "0") : "00";
+            progressLabel.textContent = index >= 0 ? chapterName[id] : "Sistema armado";
+          }
+        };
 
-            if (!host || !THREE || !window.WebGLRenderingContext) {
-              return undefined;
+        const landChapter = (chapter) => {
+          const id = chapter.dataset.chapter;
+          if (!id || landed.has(id)) return;
+          landed.add(id);
+          chapter.classList.add("is-landed");
+          const state = chapter.querySelector("[data-stage-state]");
+          if (state) state.textContent = "pousou";
+          const button = projectButtons.find((item) => item.dataset.projectButton === id);
+          button?.classList.add("is-landed");
+          const buttonState = button?.querySelector(".release-state");
+          if (buttonState) buttonState.textContent = "Pousou";
+        };
+
+        const updateScrollState = () => {
+          scrollFrame = 0;
+          const viewportHeight = window.innerHeight || 1;
+          const maxScroll = Math.max(document.documentElement.scrollHeight - viewportHeight, 1);
+          const currentY = window.scrollY;
+          const movingDown = currentY >= previousY - 1;
+          const progress = Math.min(Math.max(currentY / maxScroll, 0), 1);
+          root.style.setProperty("--progress", progress.toFixed(4));
+          let currentId = null;
+          let closestDistance = Number.POSITIVE_INFINITY;
+
+          chapters.forEach((chapter) => {
+            const bounds = chapter.getBoundingClientRect();
+            const intersectsFocus = bounds.top < viewportHeight * 0.62 && bounds.bottom > viewportHeight * 0.34;
+            if (movingDown && bounds.top < viewportHeight * 0.64 && bounds.bottom > viewportHeight * 0.22) {
+              landChapter(chapter);
             }
-
-            let renderer;
-            try {
-              renderer = new THREE.WebGLRenderer({
-                alpha: true,
-                antialias: !mobile,
-                powerPreference: "low-power"
-              });
-            } catch (error) {
-              return undefined;
-            }
-
-            const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(37, 1, 0.1, 100);
-            const relic = new THREE.Group();
-            const stars = [];
-            const disposedMaterials = new Set();
-            let frame = 0;
-            let active = true;
-            let targetX = 0;
-            let targetY = 0;
-
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, mobile ? 1 : 1.5));
-            renderer.setClearColor(0x000000, 0);
-            renderer.domElement.setAttribute("aria-hidden", "true");
-            renderer.domElement.setAttribute("role", "presentation");
-            host.appendChild(renderer.domElement);
-            document.documentElement.classList.add("webgl-ready");
-
-            camera.position.set(0, 0.05, 6.7);
-            scene.add(relic);
-
-            const bronze = new THREE.MeshStandardMaterial({
-              color: 0xc98253,
-              metalness: 0.62,
-              roughness: 0.47
-            });
-            const stone = new THREE.MeshStandardMaterial({
-              color: 0x40372b,
-              metalness: 0.08,
-              roughness: 0.88
-            });
-            const ember = new THREE.MeshBasicMaterial({
-              color: 0xf0b47c,
-              transparent: true,
-              opacity: 0.78
-            });
-
-            const outerRing = new THREE.Mesh(
-              new THREE.TorusGeometry(1.55, 0.075, 8, 52, Math.PI * 1.77),
-              bronze
-            );
-            outerRing.rotation.set(-0.28, 0.19, 0.15);
-            relic.add(outerRing);
-
-            const innerRing = new THREE.Mesh(
-              new THREE.TorusGeometry(1.08, 0.042, 8, 42, Math.PI * 1.34),
-              bronze.clone()
-            );
-            innerRing.rotation.set(0.61, -0.3, -0.42);
-            relic.add(innerRing);
-
-            const core = new THREE.Mesh(new THREE.DodecahedronGeometry(0.34, 1), stone);
-            core.rotation.set(0.25, 0.35, -0.16);
-            relic.add(core);
-
-            const emberCore = new THREE.Mesh(new THREE.IcosahedronGeometry(0.12, 1), ember);
-            relic.add(emberCore);
-
-            const count = mobile ? 19 : 38;
-            for (let index = 0; index < count; index += 1) {
-              const pointMaterial = ember.clone();
-              pointMaterial.opacity = 0.32 + (index % 5) * 0.09;
-              const star = new THREE.Mesh(
-                new THREE.SphereGeometry(0.015 + (index % 3) * 0.008, 6, 6),
-                pointMaterial
-              );
-              const angle = index * 2.399;
-              const radius = 0.7 + (index % 8) * 0.23;
-              star.position.set(
-                Math.cos(angle) * radius,
-                Math.sin(angle) * radius,
-                -0.38 - (index % 4) * 0.12
-              );
-              relic.add(star);
-              stars.push(star);
-            }
-
-            scene.add(new THREE.AmbientLight(0xffe4c1, 0.86));
-            const key = new THREE.PointLight(0xf0b375, 14, 9);
-            key.position.set(2.3, 2.6, 3.1);
-            scene.add(key);
-            const rim = new THREE.PointLight(0x91a384, 5, 7);
-            rim.position.set(-3, -1, 2);
-            scene.add(rim);
-
-            const resize = () => {
-              const { width, height } = host.getBoundingClientRect();
-              if (!width || !height) return;
-              renderer.setSize(width, height, false);
-              camera.aspect = width / height;
-              camera.updateProjectionMatrix();
-            };
-
-            const onPointerMove = (event) => {
-              targetX = (event.clientX / window.innerWidth - 0.5) * 0.32;
-              targetY = (event.clientY / window.innerHeight - 0.5) * 0.18;
-            };
-
-            const render = (time = 0) => {
-              if (!active) return;
-              if (!reducedMotion.matches) {
-                relic.rotation.y += (targetX - relic.rotation.y) * 0.035;
-                relic.rotation.x += (targetY - relic.rotation.x) * 0.035;
-                relic.rotation.z = Math.sin(time * 0.00032) * 0.055;
-                core.rotation.y = time * 0.00038;
-                emberCore.rotation.y = -time * 0.00052;
-                stars.forEach((star, index) => {
-                  star.material.opacity = 0.31 + Math.sin(time * 0.001 + index * 0.58) * 0.16;
-                });
+            if (intersectsFocus) {
+              const center = bounds.top + bounds.height / 2;
+              const distance = Math.abs(center - viewportHeight / 2);
+              if (distance < closestDistance) {
+                closestDistance = distance;
+                currentId = chapter.dataset.chapter;
               }
-              renderer.render(scene, camera);
-              if (!reducedMotion.matches) {
-                frame = window.requestAnimationFrame(render);
-              }
-            };
-
-            const resizeObserver = window.ResizeObserver ? new ResizeObserver(resize) : null;
-            resizeObserver?.observe(host);
-            window.addEventListener("resize", resize, { passive: true });
-            if (!reducedMotion.matches) {
-              window.addEventListener("pointermove", onPointerMove, { passive: true });
             }
-            resize();
-            render();
+          });
 
-            return () => {
-              active = false;
-              window.cancelAnimationFrame(frame);
-              resizeObserver?.disconnect();
-              window.removeEventListener("resize", resize);
-              window.removeEventListener("pointermove", onPointerMove);
-              scene.traverse((object) => {
-                if (object.geometry) object.geometry.dispose();
-                if (object.material) {
-                  const materials = Array.isArray(object.material) ? object.material : [object.material];
-                  materials.forEach((material) => {
-                    if (!disposedMaterials.has(material)) {
-                      material.dispose();
-                      disposedMaterials.add(material);
-                    }
-                  });
-                }
-              });
-              renderer.dispose();
-              renderer.domElement.remove();
-              document.documentElement.classList.remove("webgl-ready");
-            };
-          }, []);
+          if (currentId) setActive(currentId);
+          else if (currentY < viewportHeight * 0.7) setActive(null);
+          previousY = currentY;
+        };
 
-          return h("div", { className: "relic-scene", ref: hostRef, "aria-hidden": true });
-        }
+        const requestScrollUpdate = () => {
+          if (!scrollFrame) scrollFrame = window.requestAnimationFrame(updateScrollState);
+        };
 
-        function ExperienceEnhancer() {
-          useEffect(() => {
-            const reveals = [...document.querySelectorAll(".reveal")];
-            const navLinks = [...document.querySelectorAll(".site-nav a")];
-            const root = document.documentElement;
-            const hero = document.querySelector(".hero");
-            const projects = document.querySelector("#projetos");
-            const process = document.querySelector("#percurso");
-            const projectItems = [...document.querySelectorAll(".project")];
-            const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-            const storyProperties = [
-              "--page-progress",
-              "--page-progress-pct",
-              "--hero-copy-shift",
-              "--hero-copy-opacity",
-              "--hero-visual-x",
-              "--hero-visual-y",
-              "--hero-visual-rotate",
-              "--hero-visual-scale",
-              "--projects-progress",
-              "--process-ring-x",
-              "--process-ring-y",
-              "--process-ring-scale",
-              "--process-orbit-x",
-              "--process-orbit-y",
-              "--process-orbit-scale"
-            ];
-            let revealObserver;
-            let sectionObserver;
-            let storyFrame = 0;
+        projectButtons.forEach((button) => {
+          const id = button.dataset.projectButton;
+          const lane = rigLanes.find((item) => item.dataset.rigObject === id);
+          const prototype = lane?.querySelector(".prototype");
+          const showPreview = () => lane?.classList.add("is-preview");
+          const hidePreview = () => lane?.classList.remove("is-preview");
 
-            const clamp = (value, min = 0, max = 1) => Math.min(Math.max(value, min), max);
-            const sectionProgress = (element, start = 0.84, end = 0.24) => {
-              if (!element) return 0;
-              const viewportHeight = window.innerHeight || 1;
-              const bounds = element.getBoundingClientRect();
-              const startPoint = viewportHeight * start;
-              const endPoint = viewportHeight * end - bounds.height;
-              return clamp((startPoint - bounds.top) / Math.max(1, startPoint - endPoint));
-            };
-
-            const updateStory = () => {
-              storyFrame = 0;
-              const viewportHeight = window.innerHeight || 1;
-              const documentHeight = Math.max(document.documentElement.scrollHeight - viewportHeight, 1);
-              const pageProgress = clamp(window.scrollY / documentHeight);
-              const heroProgress = hero
-                ? clamp(window.scrollY / Math.max(hero.offsetHeight * 0.88, 1))
-                : 0;
-              const projectsProgress = sectionProgress(projects);
-              const processProgress = sectionProgress(process, 0.82, 0.3);
-
-              root.style.setProperty("--page-progress", pageProgress.toFixed(4));
-              root.style.setProperty("--page-progress-pct", (pageProgress * 100).toFixed(2) + "%");
-              root.style.setProperty("--hero-copy-shift", Math.round(heroProgress * -36) + "px");
-              root.style.setProperty("--hero-copy-opacity", (1 - heroProgress * 0.24).toFixed(3));
-              root.style.setProperty("--hero-visual-x", Math.round(heroProgress * -18) + "px");
-              root.style.setProperty("--hero-visual-y", Math.round(heroProgress * -42) + "px");
-              root.style.setProperty("--hero-visual-rotate", (heroProgress * -3.2).toFixed(2) + "deg");
-              root.style.setProperty("--hero-visual-scale", (1 + heroProgress * 0.045).toFixed(3));
-              root.style.setProperty("--projects-progress", projectsProgress.toFixed(4));
-              root.style.setProperty("--process-ring-x", Math.round(processProgress * 24) + "px");
-              root.style.setProperty("--process-ring-y", Math.round(processProgress * -18) + "px");
-              root.style.setProperty("--process-ring-scale", (1 + processProgress * 0.08).toFixed(3));
-              root.style.setProperty("--process-orbit-x", Math.round(processProgress * -30) + "px");
-              root.style.setProperty("--process-orbit-y", Math.round(processProgress * 20) + "px");
-              root.style.setProperty("--process-orbit-scale", (1 + processProgress * 0.1).toFixed(3));
-
-              const projectBounds = projects?.getBoundingClientRect();
-              const projectsAreInView = projectBounds &&
-                projectBounds.top < viewportHeight * 0.72 &&
-                projectBounds.bottom > viewportHeight * 0.28;
-              let currentProject = null;
-
-              if (projectsAreInView) {
-                const focalPoint = viewportHeight * 0.52;
-                currentProject = projectItems.reduce((closest, item) => {
-                  if (!closest) return item;
-                  const itemBounds = item.getBoundingClientRect();
-                  const closestBounds = closest.getBoundingClientRect();
-                  const itemDistance = Math.abs(itemBounds.top + itemBounds.height / 2 - focalPoint);
-                  const closestDistance = Math.abs(closestBounds.top + closestBounds.height / 2 - focalPoint);
-                  return itemDistance < closestDistance ? item : closest;
-                }, null);
-              }
-
-              projectItems.forEach((item) => item.classList.toggle("is-story-current", item === currentProject));
-            };
-
-            const requestStoryUpdate = () => {
-              if (!storyFrame) storyFrame = window.requestAnimationFrame(updateStory);
-            };
-
-            root.classList.add("js");
-
-            if (!("IntersectionObserver" in window)) {
-              reveals.forEach((element) => element.classList.add("is-visible"));
-            } else {
-              revealObserver = new IntersectionObserver(
-                (entries) => {
-                  entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                      entry.target.classList.add("is-visible");
-                      revealObserver.unobserve(entry.target);
-                    }
-                  });
-                },
-                { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
-              );
-
-              sectionObserver = new IntersectionObserver(
-                (entries) => {
-                  entries.forEach((entry) => {
-                    if (!entry.isIntersecting) return;
-                    navLinks.forEach((link) => {
-                      link.classList.toggle("is-current", link.getAttribute("href") === "#" + entry.target.id);
-                    });
-                  });
-                },
-                { threshold: 0.45 }
-              );
-
-              reveals.forEach((element) => revealObserver.observe(element));
-              document.querySelectorAll("#projetos, #percurso").forEach((section) => sectionObserver.observe(section));
+          button.addEventListener("pointerenter", showPreview);
+          button.addEventListener("pointerleave", hidePreview);
+          button.addEventListener("focus", showPreview);
+          button.addEventListener("blur", hidePreview);
+          button.addEventListener("click", () => {
+            setActive(id);
+            if (!reducedMotion.matches && prototype) {
+              prototype.classList.remove("is-releasing");
+              window.requestAnimationFrame(() => prototype.classList.add("is-releasing"));
+              window.setTimeout(() => prototype.classList.remove("is-releasing"), 460);
             }
+          });
+        });
 
-            if (!reducedMotion.matches) {
-              updateStory();
-              window.addEventListener("scroll", requestStoryUpdate, { passive: true });
-              window.addEventListener("resize", requestStoryUpdate, { passive: true });
-            }
+        window.addEventListener("scroll", requestScrollUpdate, { passive: true });
+        window.addEventListener("resize", requestScrollUpdate, { passive: true });
+        updateScrollState();
 
-            return () => {
-              window.cancelAnimationFrame(storyFrame);
-              window.removeEventListener("scroll", requestStoryUpdate);
-              window.removeEventListener("resize", requestStoryUpdate);
-              revealObserver?.disconnect();
-              sectionObserver?.disconnect();
-              projectItems.forEach((item) => item.classList.remove("is-story-current"));
-              storyProperties.forEach((property) => root.style.removeProperty(property));
-              root.classList.remove("js");
-            };
-          }, []);
+        if (!reducedMotion.matches && finePointer.matches) {
+          const cursor = document.querySelector(".cursor");
+          const cursorLabel = cursor?.querySelector(".cursor-label");
+          const cursorTargets = [...document.querySelectorAll("[data-cursor-label]")];
+          let cursorX = -100;
+          let cursorY = -100;
+          let cursorFrame = 0;
 
-          return null;
+          const paintCursor = () => {
+            cursorFrame = 0;
+            cursor?.style.setProperty("transform", "translate3d(" + cursorX + "px, " + cursorY + "px, 0) translate(-50%, -50%)");
+          };
+
+          const requestCursorPaint = () => {
+            if (!cursorFrame) cursorFrame = window.requestAnimationFrame(paintCursor);
+          };
+
+          root.classList.add("cursor-enabled");
+          window.addEventListener("pointermove", (event) => {
+            cursorX = event.clientX;
+            cursorY = event.clientY;
+            cursor?.classList.add("is-visible");
+            requestCursorPaint();
+          }, { passive: true });
+          window.addEventListener("pointerleave", () => cursor?.classList.remove("is-visible"));
+          window.addEventListener("blur", () => cursor?.classList.remove("is-visible"));
+
+          cursorTargets.forEach((target) => {
+            target.addEventListener("pointerenter", () => {
+              if (cursorLabel) cursorLabel.textContent = target.dataset.cursorLabel || "ABRIR";
+              cursor?.classList.add("is-active");
+            });
+            target.addEventListener("pointerleave", () => cursor?.classList.remove("is-active"));
+          });
         }
-
-        const sceneMount = document.getElementById("scene-root");
-        const enhancerMount = document.createElement("div");
-        enhancerMount.hidden = true;
-        document.body.appendChild(enhancerMount);
-
-        if (sceneMount) {
-          window.ReactDOM.createRoot(sceneMount).render(h(RelicScene));
-        }
-        window.ReactDOM.createRoot(enhancerMount).render(h(ExperienceEnhancer));
       })();
     </script>
   </body>
